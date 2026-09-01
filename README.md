@@ -34,3 +34,7 @@ skill-name/
 ```
 
 `SKILL.md`와 `README.md`의 역할을 섞지 않는다 — `SKILL.md`는 에이전트가 실행 중에 참조하는 절차 문서이고, `README.md`는 저장소를 훑어보는 사람(나중의 나, 또는 포트폴리오 보는 사람)을 위한 설명이다.
+
+## 기여하기
+
+다른 프로젝트에서도 통할 만한 스킬이 있다면 PR을 환영한다. 폴더 구조, 리뷰 기준, PR 절차는 [`CONTRIBUTING.md`](./CONTRIBUTING.md)에 있다.

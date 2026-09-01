@@ -15,16 +15,27 @@ Claude와 대화하면서 여행 일정을 짜봤는데, 결과물 자체는 만
 - **고정 템플릿**: 매번 다른 형태로 나오면 재사용이 안 된다. 출력 구조를 템플릿 파일로 분리해서 강제한다.
 - **모호할 때는 질문한다**: 여행 성격·동행 유형·예산 감각처럼 결과물이 크게 갈리는 조건은 넘겨짚지 않고 구조화된 질문으로 먼저 확인한다.
 
+## 설치
+
+이 저장소는 Claude Code 플러그인 마켓플레이스다. 마켓플레이스를 한 번 등록해두면 원하는 스킬만 골라 설치할 수 있다.
+
+```
+/plugin marketplace add Jeric1223/my-claude-skills
+/plugin install travel-itinerary@jeric-skills
+```
+
+등록된 스킬 목록은 `/plugin` 으로 둘러볼 수 있고, 새 스킬이 추가되면 `/plugin marketplace update jeric-skills` 로 갱신한다.
+
 ## 스킬 목록
 
-| 스킬 | 설명 |
-| --- | --- |
-| [`travel-itinerary-skill`](./travel-itinerary-skill) | 목적지·날짜·인원만 주면 검증된 정보 + 구글맵 링크 + 예약 체크리스트가 포함된 일차별 여행 일정표를 생성 |
-| [`session-to-skill`](./session-to-skill) | 진행 중인 대화에서 재사용 가능한 패턴을 찾아 제안하고, 선택된 것을 이 저장소 컨벤션에 맞는 스킬로 등록 |
+| 스킬 | 설치 이름 | 설명 |
+| --- | --- | --- |
+| [`travel-itinerary-skill`](./travel-itinerary-skill) | `travel-itinerary@jeric-skills` | 목적지·날짜·인원만 주면 검증된 정보 + 구글맵 링크 + 예약 체크리스트가 포함된 일차별 여행 일정표를 생성 |
+| [`session-to-skill`](./session-to-skill) | `session-to-skill@jeric-skills` | 진행 중인 대화에서 재사용 가능한 패턴을 찾아 제안하고, 선택된 것을 이 저장소 컨벤션에 맞는 스킬로 등록 |
 
 ## 스킬 구조
 
-새 스킬을 추가할 땐 `skills/` 바로 밑에 폴더를 만들고, 아래 형식을 따른다.
+새 스킬을 추가할 땐 저장소 루트 바로 밑에 폴더를 만들고, 아래 형식을 따른다.
 
 ```
 skill-name/
@@ -32,6 +43,22 @@ skill-name/
   template.md    # 선택 — 출력 형식이 고정되어야 하는 경우의 스켈레톤
   README.md      # 필수 — 사람이 읽는 설명: 뭘 하는지, 왜 이렇게 설계했는지, 사용 흐름
 ```
+
+폴더 루트에 `SKILL.md`가 있고 `skills/` 하위 폴더가 없으면 Claude Code가 이를 **단일 스킬 플러그인**으로 자동 인식한다. 그래서 폴더마다 `plugin.json`을 따로 둘 필요가 없다.
+
+폴더를 만든 뒤에는 루트 [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json)의 `plugins` 배열에 항목을 추가해야 설치 대상이 된다. 이 파일이 마켓플레이스의 유일한 레지스트리다.
+
+```json
+{
+  "name": "설치 이름 (kebab-case)",
+  "source": "./skill-name",
+  "description": "언제 쓰는 스킬인지",
+  "version": "1.0.0",
+  "author": { "name": "Jeric1223" }
+}
+```
+
+`name`은 폴더명과 달라도 된다 — 사용자가 `/plugin install <name>@jeric-skills`로 입력하는 이름이다.
 
 `SKILL.md`와 `README.md`의 역할을 섞지 않는다 — `SKILL.md`는 에이전트가 실행 중에 참조하는 절차 문서이고, `README.md`는 저장소를 훑어보는 사람(나중의 나, 또는 포트폴리오 보는 사람)을 위한 설명이다.
 

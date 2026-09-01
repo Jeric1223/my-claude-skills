@@ -29,13 +29,16 @@ skill-name/
 
 1. 이 저장소를 fork하거나 브랜치를 딴다 (저장소에 write 권한이 없으면 fork)
 2. `skill-name/` 폴더를 위 구조대로 작성한다
-3. 저장소 루트 `README.md`의 "스킬 목록" 표에 새 스킬 행을 추가한다
-4. PR을 연다 — 템플릿의 체크리스트를 채운다
-5. 리뷰를 기다린다
+3. 루트 `.claude-plugin/marketplace.json`의 `plugins` 배열에 항목을 추가한다 (`name`, `source`는 필수)
+4. 저장소 루트 `README.md`의 "스킬 목록" 표에 새 스킬 행을 추가한다
+5. `claude plugin marketplace add .` 로 로컬 등록 후 `claude plugin install <name>@jeric-skills`가 성공하는지 확인한다
+6. PR을 연다 — 템플릿의 체크리스트를 채운다
+7. 리뷰를 기다린다
 
 ## 리뷰 기준
 
 - 위 "스킬을 추가하기 전에" 세 가지 질문에 답할 수 있는가
+- `marketplace.json`에 항목이 등록되어 있고, 실제로 설치가 되는가
 - `SKILL.md`의 `description`이 트리거 조건만 담고 있는가 (절차 요약 아님)
 - 다른 사람이 그대로 갖다 써도 프로젝트 특수 정보가 섞여 들어가지 않는가
 - `template.md`가 있다면, 실제로 출력 형식이 고정되어야 하는 스킬인가 (아니면 불필요한 파일)

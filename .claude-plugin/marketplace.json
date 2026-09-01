@@ -1,0 +1,27 @@
+{
+  "name": "jeric-skills",
+  "owner": {
+    "name": "Jeric1223",
+    "url": "https://github.com/Jeric1223"
+  },
+  "plugins": [
+    {
+      "name": "travel-itinerary",
+      "source": "./travel-itinerary-skill",
+      "description": "목적지·날짜·인원만 주면 검증된 정보 + 구글맵 링크 + 예약 체크리스트가 포함된 일차별 여행 일정표를 생성",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    },
+    {
+      "name": "session-to-skill",
+      "source": "./session-to-skill",
+      "description": "진행 중인 대화에서 재사용 가능한 패턴을 찾아 제안하고, 선택된 것을 이 저장소 컨벤션에 맞는 스킬로 등록",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    }
+  ]
+}

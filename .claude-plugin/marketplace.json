@@ -22,6 +22,15 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "aws-helper",
+      "source": "./aws-helper",
+      "description": "AWS를 조회하기 전에 실측 권한 캐시로 자격증명 프로파일을 고르고, 쓰기는 실행하지 않고 명령어와 롤백 방법만 제시",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }

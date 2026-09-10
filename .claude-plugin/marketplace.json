@@ -31,6 +31,15 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "postman-collection",
+      "source": "./postman-collection-from-code",
+      "description": "API를 만들거나 고친 뒤 라우터·검증 스키마·enum·인증 미들웨어를 소스에서 읽어 파라미터마다 허용값이 적힌 Postman 컬렉션 JSON을 만들거나 갱신",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }

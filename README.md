@@ -30,6 +30,7 @@
 | **[travel-itinerary](./travel-itinerary-skill)** | `travel-itinerary@jeric-skills` | 목적지·날짜·인원만 주면 검증된 정보, 구글맵 링크, 예약 체크리스트가 포함된 일차별 여행 일정표를 만듭니다 |
 | **[session-to-skill](./session-to-skill)** | `session-to-skill@jeric-skills` | 진행 중인 대화에서 재사용할 만한 패턴을 찾아 제안하고, 선택한 것을 이 저장소 컨벤션에 맞는 스킬로 등록한 뒤, 원하면 민감정보를 검사하고 이 저장소로 PR까지 열어줍니다 |
 | **[aws-helper](./aws-helper)** | `aws-helper@jeric-skills` | AWS를 조회하기 전에 실측 권한 캐시로 자격증명 프로파일을 고르고, 쓰기 작업은 실행하지 않고 명령어와 롤백 방법만 만들어 넘깁니다 |
+| **[postman-collection-from-code](./postman-collection-from-code)** | `postman-collection@jeric-skills` | API를 만들거나 고친 뒤 라우터·검증 스키마·enum·인증 미들웨어를 소스에서 읽어, 파라미터마다 허용값이 적힌 Postman 컬렉션 JSON을 만들거나 기존 컬렉션을 갱신합니다 |
 
 ## 설계 원칙
 

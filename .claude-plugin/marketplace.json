@@ -40,6 +40,15 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "readme-screenshots",
+      "source": "./readme-screenshots",
+      "description": "앱을 실제로 띄워 고정된 뷰포트·테마로 화면을 캡처하고, docs/에 저장한 뒤 README에 상대경로 + 확대 링크 형태로 삽입하거나 갱신",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }

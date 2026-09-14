@@ -31,6 +31,8 @@
 | **[session-to-skill](./session-to-skill)** | `session-to-skill@jeric-skills` | 진행 중인 대화에서 재사용할 만한 패턴을 찾아 제안하고, 선택한 것을 이 저장소 컨벤션에 맞는 스킬로 등록한 뒤, 원하면 민감정보를 검사하고 이 저장소로 PR까지 열어줍니다 |
 | **[aws-helper](./aws-helper)** | `aws-helper@jeric-skills` | AWS를 조회하기 전에 실측 권한 캐시로 자격증명 프로파일을 고르고, 쓰기 작업은 실행하지 않고 명령어와 롤백 방법만 만들어 넘깁니다 |
 | **[postman-collection-from-code](./postman-collection-from-code)** | `postman-collection@jeric-skills` | API를 만들거나 고친 뒤 라우터·검증 스키마·enum·인증 미들웨어를 소스에서 읽어, 파라미터마다 허용값이 적힌 Postman 컬렉션 JSON을 만들거나 기존 컬렉션을 갱신합니다 |
+| **[dev-start](./dev-start)** | `dev-start@jeric-skills` | 티켓 하나를 이슈 생성 → 브랜치 → 설계 승인 → 구현 → 검증 → Postman 컬렉션 → 변경 내역·직접 할 일 정리까지 같은 순서로 진행합니다 |
+| **[merge-safe](./merge-safe)** | `merge-safe@jeric-skills` | master 기준 기능 브랜치를 test 같은 통합 브랜치에 넣을 때, 충돌을 별도 worktree 브랜치에서만 풀어 기능 브랜치에 미출시 코드가 섞이지 않게 합니다 |
 
 ## 설계 원칙
 

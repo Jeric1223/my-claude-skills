@@ -23,6 +23,12 @@ Looks back at the *current* conversation (already in context — never re-read a
 
 **3. Propose via AskUserQuestion.** Multi-select — the user may want more than one, or none of the above (they can always type something else via "Other").
 
+**3.5. Confirm the name before building anything.** The user invokes skills by typing `/<name>` from memory, so names must be easy to recall:
+- Only plain English words a non-native speaker knows (`postman-collection`, `session-to-skill`) — no jargon like `integration-branch-merge`
+- **The most important word goes first** — the word the user would think of in the moment ("I need to merge and it conflicts… merge-something") → `merge-safe`, not `safe-merge`
+- Two words is ideal, three at most
+- Offer 2-3 such names per selected skill via AskUserQuestion and use only the name the user confirms, for the folder, the `name:` frontmatter, and the `marketplace.json` entry. Do not create folders under a working name and rename later.
+
 **4. Build each selected skill.** Follow the repo convention exactly (see the marketplace repo's top-level `README.md` "스킬 구조" section, and `CONTRIBUTING.md`): `SKILL.md` (required), `README.md` (required, human-facing), `template.md` (only if output shape must be fixed).
 
 **5. Register it locally.**

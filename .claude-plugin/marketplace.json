@@ -49,6 +49,24 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "mentor-mode-teaching",
+      "source": "./mentor-mode-teaching",
+      "description": "사수 역할로 새 기술의 개념을 먼저 설명하고, 예측 질문을 던진 뒤 맞은 부분·교정·용어표·면접용 한 문장 형식으로 피드백하며 프로젝트를 같이 진행",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    },
+    {
+      "name": "save-learning-log",
+      "source": "./save-learning-log",
+      "description": "학습 세션을 끝낼 때 다음에 할 일·숙제·미답변 질문·날짜별 Q&A 요약을 프로젝트 MEMORY.md에 남기고, 다음 세션이 그 지점부터 이어가도록 CLAUDE.md에 연결",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }

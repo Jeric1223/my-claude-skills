@@ -33,6 +33,7 @@
 | **[postman-collection-from-code](./postman-collection-from-code)** | `postman-collection@jeric-skills` | API를 만들거나 고친 뒤 라우터·검증 스키마·enum·인증 미들웨어를 소스에서 읽어, 파라미터마다 허용값이 적힌 Postman 컬렉션 JSON을 만들거나 기존 컬렉션을 갱신합니다 |
 | **[dev-start](./dev-start)** | `dev-start@jeric-skills` | 티켓 하나를 이슈 생성 → 브랜치 → 설계 승인 → 구현 → 검증 → Postman 컬렉션 → 변경 내역·직접 할 일 정리까지 같은 순서로 진행합니다 |
 | **[merge-safe](./merge-safe)** | `merge-safe@jeric-skills` | master 기준 기능 브랜치를 test 같은 통합 브랜치에 넣을 때, 충돌을 별도 worktree 브랜치에서만 풀어 기능 브랜치에 미출시 코드가 섞이지 않게 합니다 |
+| **[blog-post](./blog-post)** | `blog-post@jeric-skills` | 레포의 git 히스토리에서 글로 남길 만한 마찰 지점(삽질·방향 전환·외부 제약)을 찾아 후보를 제안하고, 고른 주제로 실제 화면 캡처가 들어간 기술 블로그 초안을 만든 뒤 AI 티를 벗깁니다 |
 
 ## 설계 원칙
 

@@ -42,6 +42,15 @@
       }
     },
     {
+      "name": "readme-screenshots",
+      "source": "./readme-screenshots",
+      "description": "앱을 실제로 띄워 고정된 뷰포트·테마로 화면을 캡처하고, docs/에 저장한 뒤 README에 상대경로 + 확대 링크 형태로 삽입하거나 갱신",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    },
+    {
       "name": "dev-start",
       "source": "./dev-start",
       "description": "티켓 단위 개발을 이슈 생성 → 기본 브랜치에서 브랜치 → 설계 승인 → 구현 → 검증 → Postman 컬렉션 → 변경 내역과 직접 할 일 정리까지 한 사이클로 진행",
@@ -63,6 +72,24 @@
       "name": "blog-post",
       "source": "./blog-post",
       "description": "레포의 git 히스토리에서 글로 남길 만한 마찰 지점을 찾아 3~4개 후보를 제안하고, 고른 주제로 실제 화면 캡처가 들어간 기술 블로그 초안을 만든 뒤 AI 티를 벗김",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    },
+    {
+      "name": "mentor-mode-teaching",
+      "source": "./mentor-mode-teaching",
+      "description": "사수 역할로 새 기술의 개념을 먼저 설명하고, 예측 질문을 던진 뒤 맞은 부분·교정·용어표·면접용 한 문장 형식으로 피드백하며 프로젝트를 같이 진행",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
+    },
+    {
+      "name": "save-learning-log",
+      "source": "./save-learning-log",
+      "description": "학습 세션을 끝낼 때 다음에 할 일·숙제·미답변 질문·날짜별 Q&A 요약을 프로젝트 MEMORY.md에 남기고, 다음 세션이 그 지점부터 이어가도록 CLAUDE.md에 연결",
       "version": "1.0.0",
       "author": {
         "name": "Jeric1223"

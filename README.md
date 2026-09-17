@@ -97,6 +97,10 @@ skill-name/
 
 다른 프로젝트에서도 통할 만한 스킬이라면 PR을 환영합니다. 폴더 구조, 버전 규칙, 리뷰 기준은 [CONTRIBUTING.md](./CONTRIBUTING.md)에 있습니다.
 
+## 이 저장소를 만들면서 쓴 글
+
+[![velog](https://velog-readme-stats.vercel.app/api?name=hoohoo0889)](https://velog.io/@hoohoo0889)
+
 ---
 
 <div align="center">

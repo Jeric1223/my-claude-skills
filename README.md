@@ -101,7 +101,7 @@ skill-name/
 
 매번 같은 요청을 새 세션에서 다시 설명하던 문제를, 프롬프트가 아니라 절차를 파일로 못 박는 방향으로 푼 과정을 글로 남겼습니다.
 
-→ [매 세션 똑같은 설명을 반복하고 있다면, 프롬프트 문제가 아닙니다](https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85a%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4)
+→ [매 세션 똑같은 설명을 반복하고 있다면, 프롬프트 문제가 아닙니다]([https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85a%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4](https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4))
 
 ---
 

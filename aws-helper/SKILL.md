@@ -39,6 +39,37 @@ description: Use before running any `aws` CLI command — when inspecting AWS re
 - `allow` / `deny`는 **액션 단위**로 기록한다 (`서비스:액션`). 서비스 단위로 뭉뜽그리지 않는다 — 같은 DynamoDB라도 Scan은 되고 UpdateTable은 안 되는 경우가 실제로 있다.
 - 캐시에 없는 액션은 "권한 없음"이 아니라 **"모름"**이다. 둘을 절대 혼동하지 않는다.
 
+## 읽기 전용 Role 우선 (MFA assume)
+
+캐시 최상위에 `read_role` 이 있으면, 읽기 조회는 **IAM User 프로파일보다 이 Role 을 먼저 쓴다.** 쓰기가 원천 차단된 Role 이라 오조작 위험이 없다.
+
+```json
+"read_role": {
+  "profile": "mfa-role-<RoleName>",
+  "assume_cmd": "zsh ~/.aws/AssumeRole.zsh <MFA코드>"
+}
+```
+
+`assume_cmd` 는 MFA 코드를 인자로 받아 STS 임시 자격증명을 `profile` 이름으로 `~/.aws/credentials` 에 쓰는 비대화형 스크립트여야 한다. 대화형(`read` 프롬프트) 스크립트는 Claude 가 실행할 수 없다.
+
+**0단계 — 세션이 살아있는지 확인** (아래 절차 1번보다 먼저):
+
+```bash
+aws sts get-caller-identity --profile <read_role.profile> --query Arn --output text
+```
+
+| 결과 | 행동 |
+| --- | --- |
+| ARN 출력 | 이 프로파일로 진행 |
+| `ExpiredToken` / `could not be found` | **MFA 코드를 요청하고 턴을 끝낸다** — "MFA 6자리 코드 알려주세요 (30초 안에 만료)" 한 줄만. AskUserQuestion 쓰지 않는다 (선택지가 아니라 값 입력) |
+
+**코드를 받으면** `assume_cmd` 를 실행하고 → 0단계 명령으로 ARN 재확인 → 원래 조회 진행.
+
+- `MultiFactorAuthentication failed` / `invalid MFA one time pass code` → 코드 만료. **새 코드를 한 번만** 다시 요청한다. 두 번 실패하면 멈추고 사용자에게 직접 `! source <스크립트>` 실행을 안내한다
+- MFA 코드를 기다리는 동안 **다른 프로파일로 우회 조회하지 않는다** — Role 을 쓰려는 이유(읽기 전용 보장)가 사라진다
+- 이 Role 에서 AccessDenied 가 난 액션만 기존 절차대로 IAM User 프로파일 중에서 고른다
+- `read_role` 이 캐시에 없으면 이 섹션을 건너뛴다
+
 ## 절차
 
 **1. 캐시를 읽는다.** 파일이 없으면 부트스트랩:

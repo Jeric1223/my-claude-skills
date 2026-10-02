@@ -1,6 +1,6 @@
 ---
 name: blog-post
-description: Use when turning work that just happened in a repo into a technical blog post or portfolio write-up — "블로그 쓸 거 있나 봐줘", "이번 작업 글로 남기자", "포트폴리오에 쓸 거 뽑아줘", "개발기 써줘", "회고 글 초안". Mines the repo's git history and the current session for material worth writing about, proposes 3-4 subjects, then drafts a Markdown post with real screenshots captured from the running service, and runs it through humanize-korean so it does not read as AI output. Not for README/API docs — those are reference, not narrative.
+description: Use when turning work that just happened in a repo into a technical blog post or portfolio write-up — "블로그 쓸 거 있나 봐줘", "이번 작업 글로 남기자", "포트폴리오에 쓸 거 뽑아줘", "개발기 써줘", "회고 글 초안". Mines the repo's git history and the current session for material worth writing about, proposes 3-4 subjects (switching to an interview when the user rejects them all or wants a retrospective/intro piece), then drafts a Markdown post with real screenshots captured from the running service, runs it through humanize-korean so it does not read as AI output, and hands back a 150-character summary for the listing card. Not for README/API docs — those are reference, not narrative.
 ---
 
 # blog-post
@@ -63,6 +63,39 @@ git log --oneline --since="3 weeks ago"          # 브랜치가 이미 머지됐
 
 글이 안 될 것 같은 후보는 넣지 않는다. 마찰이 없으면 후보가 아니다. 쓸 만한 게 하나도 없으면 **없다고 말한다** — 억지로 4개를 채우지 않는다.
 
+### 3.5. 후보가 다 아니라고 하면 — 인터뷰로 전환
+
+사용자가 후보를 **전부 거절하는 일이 실제로 있다.** 이유는 대개 하나다. §2가 찾는 건 git에 남은 마찰인데, 사용자가 쓰고 싶은 건 **왜 이걸 만들었고 무엇을 느꼈는가**일 때다. 회고·프로젝트 소개·"AI 시대에 개발자는" 같은 글이 여기 해당한다.
+
+이때 **후보를 다시 4개 만들어 던지지 않는다.** 근거가 git에 없으니 몇 번을 다시 뽑아도 같은 성격의 후보가 나온다. 인터뷰로 바꾼다.
+
+전환 신호:
+
+- 후보를 전부 거절하고 "~한 느낌으로 쓰고 싶다"처럼 **방향만** 말할 때
+- 트러블슈팅이 아니라 소개·회고를 원할 때
+- 사용자가 "물어보면서 해도 된다"고 할 때
+
+**넘겨짚지 않는다.** 이런 글의 알맹이는 사용자의 판단과 감상이고, 그건 레포에 없다. 지어내면 "그럴듯한데 내 생각이 아닌 글"이 나온다. 그래서 **묻고 받아쓴다.**
+
+먼저 `AskUserQuestion`으로 두 가지를 못 박는다.
+
+| 물을 것 | 왜 |
+| :--- | :--- |
+| **독자** | "AI 도구를 쓰는 동료 개발자"와 "채용 담당자"는 완전히 다른 글이 된다 |
+| **결론 한 문장** | 글이 끝났을 때 독자에게 남길 것. 이게 정해져야 소재를 고를 수 있다 |
+
+그다음 **한 번에 서너 개씩 묶어** 질문한다. 한 문항씩 주고받으면 사용자가 지친다. 좋은 질문은 의견이 아니라 **장면**을 부른다.
+
+- ❌ 이 프로젝트의 의의는 무엇인가요
+- ✅ 이걸 쓰기 전에는 그 작업을 어떻게 하셨나요
+- ✅ 만들고 나서 실제로 달라진 순간이 있었나요
+- ✅ AI에 맡겼다가 안 됐던 건 뭐였나요
+- ✅ 남들은 잘 모르는데 본인은 자주 쓰는 방법이 있나요
+
+**답변은 요약하지 말고 소재로 쓴다.** 사용자가 든 구체적인 예(도구 이름, 그때 한 말, 반복하던 요청)가 글에서 제일 값어치 있는 부분이다. 매끄럽게 다듬다가 그 예를 통째로 날리면 인터뷰한 의미가 없다.
+
+인터뷰가 끝나면 §4로 간다. **인터뷰 내용도 사실 확인 대상이다** — 사용자가 언급한 스킬·파일·수치는 실제로 있는지 확인하고, 없으면 본문에서 뺀다.
+
 ### 4. 사실 수집
 
 고른 주제에 대해 실제 코드·커밋·설정·로그를 읽는다. 기억이나 추측으로 채우지 않는다.
@@ -70,7 +103,7 @@ git log --oneline --since="3 weeks ago"          # 브랜치가 이미 머지됐
 읽으면서 두 개의 목록을 만든다.
 
 - **확인된 사실** — 파일과 줄 번호를 붙인다. 본문에 쓸 수 있다.
-- **확인 못 한 것** — 에러 메시지 원문, 실제 수치, 리전명, 소요 시간처럼 사용자만 아는 것. 본문에 추정치를 넣지 말고 §7 목록으로 뺀다.
+- **확인 못 한 것** — 에러 메시지 원문, 실제 수치, 리전명, 소요 시간처럼 사용자만 아는 것. 본문에 추정치를 넣지 말고 §8 목록으로 뺀다.
 
 ### 5. 스크린샷 (claude-in-chrome)
 
@@ -192,11 +225,38 @@ grep -n '^!\[' "$F"                   # 이미지마다 바로 아래 캡션이 
 
 초안은 로컬 `.md` 파일로만 남긴다. **커밋하지 않는다** — 사용자가 요청할 때만 한다.
 
+### 9. 글 소개문 (150자 이내)
+
+본문을 넘기고 끝내지 않는다. **목록·공유 화면에 뜰 소개문 하나를 같이 만든다.** velog의 글 소개, 티스토리의 메타 설명, 링크를 붙였을 때 뜨는 미리보기가 전부 이 문장을 쓴다.
+
+| 항목 | 기준 |
+| :--- | :--- |
+| 길이 | **150자 이내.** 넘기면 잘린다 |
+| 앞 80자 | 목록 카드에서 보이는 건 사실상 여기까지. **문제를 여기서 끝낸다** |
+| 구조 | 본문 도입부와 같은 PAS — 문제 → 심화 → 해결 예고 |
+| 인칭·문체 | 본문과 같게. 본문이 `~습니다`면 소개문도 `~습니다` |
+
+쓰는 법은 간단하다. **본문 도입부 세 문단을 압축한다.** 새로 쓰지 않는다 — 요약이 본문과 다른 약속을 하면 들어온 독자가 바로 나간다.
+
+- ❌ Claude Code 스킬을 만들어 개발 생산성을 높인 경험을 공유합니다 (무슨 문제인지 없음)
+- ❌ 이 글에서는 스킬 시스템의 구조와 활용법을 살펴봅니다 (목차 안내)
+- ✅ 매번 같은 요청을 새 세션에서 다시 설명하고 있었습니다. 결과물은 매번 모양이 달랐고요. 프롬프트 대신 절차를 파일로 못 박은 기록입니다
+
+넘기기 전에 **글자수를 실제로 센다.** 눈대중하지 않는다.
+
+```bash
+python3 -c "s='''<소개문>'''; print(len(s))"
+```
+
 ## 흔한 실수
 
 - 기능 목록을 글감이라고 제안하기 — 마찰이 없으면 글이 안 된다
+- 후보를 전부 거절당했는데 같은 성격의 후보를 다시 4개 뽑기 — §3.5 인터뷰로 전환할 자리다
+- 인터뷰 답변을 매끄럽게 요약하다가 사용자가 든 구체적인 예를 날리기 — 그게 제일 값어치 있는 부분이다
+- 회고·소개 글에서 사용자의 생각을 넘겨짚어 지어내기 — 레포에 없는 건 물어봐야 안다
+- 본문만 넘기고 150자 소개문을 빼먹기 — 목록에서 클릭될지가 여기서 갈린다
 - `AskUserQuestion` 건너뛰고 혼자 주제를 정하기
-- 구체성이 아쉬워서 없는 수치를 지어내기 — 근거 없으면 §7 목록으로
+- 구체성이 아쉬워서 없는 수치를 지어내기 — 근거 없으면 §8 목록으로
 - AI 티를 벗기다가 이미지·표·굵게까지 전부 걷어내 텍스트 벽 만들기
 - 플레이스홀더를 본문에 남긴 채 "완성됐습니다"라고 말하기
 - 스크린샷에 실계정·토큰이 찍힌 걸 확인 안 하고 넘기기, 또는 안 가리고 가렸다고 말하기

@@ -34,7 +34,7 @@
 | **[readme-screenshots](./readme-screenshots)** | `readme-screenshots@jeric-skills` | 앱을 실제로 띄워 고정된 뷰포트·테마로 화면을 캡처하고, 실명·토큰이 찍혔는지 검사한 뒤 README에 상대경로 + 확대 링크 형태로 삽입하거나 갱신합니다 |
 | **[dev-start](./dev-start)** | `dev-start@jeric-skills` | 티켓 하나를 이슈 생성 → 브랜치 → 설계 승인 → 구현 → 검증 → Postman 컬렉션 → 변경 내역·직접 할 일 정리까지 같은 순서로 진행합니다 |
 | **[merge-safe](./merge-safe)** | `merge-safe@jeric-skills` | master 기준 기능 브랜치를 test 같은 통합 브랜치에 넣을 때, 충돌을 별도 worktree 브랜치에서만 풀어 기능 브랜치에 미출시 코드가 섞이지 않게 합니다 |
-| **[blog-post](./blog-post)** | `blog-post@jeric-skills` | 레포의 git 히스토리에서 글로 남길 만한 마찰 지점(삽질·방향 전환·외부 제약)을 찾아 후보를 제안하고, 고른 주제로 실제 화면 캡처가 들어간 기술 블로그 초안을 만든 뒤 AI 티를 벗깁니다 |
+| **[blog-post](./blog-post)** | `blog-post@jeric-skills` | 레포의 git 히스토리에서 글로 남길 만한 마찰 지점(삽질·방향 전환·외부 제약)을 찾아 후보를 제안하고, 고른 주제로 실제 화면 캡처가 들어간 기술 블로그 초안과 150자 소개문을 만든 뒤 AI 티를 벗깁니다. 후보를 전부 거절하면 인터뷰로 전환합니다 |
 | **[mentor-mode-teaching](./mentor-mode-teaching)** | `mentor-mode-teaching@jeric-skills` | 사수 역할로 새 기술의 개념을 먼저 설명하고 예측 질문을 던진 뒤, 맞은 부분·교정·용어표·면접용 한 문장 형식으로 피드백하며 프로젝트를 같이 진행합니다 |
 | **[save-learning-log](./save-learning-log)** | `save-learning-log@jeric-skills` | 학습 세션을 끝낼 때 다음에 할 일·숙제·미답변 질문·날짜별 Q&A 요약을 프로젝트 `MEMORY.md`에 남기고, 다음 세션이 그 지점부터 이어가도록 `CLAUDE.md`에 연결합니다 |
 
@@ -101,7 +101,7 @@ skill-name/
 
 매번 같은 요청을 새 세션에서 다시 설명하던 문제를, 프롬프트가 아니라 절차를 파일로 못 박는 방향으로 푼 과정을 글로 남겼습니다.
 
-→ [매 세션 똑같은 설명을 반복하고 있다면, 프롬프트 문제가 아닙니다]([https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4](https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4))
+→ [매 세션 똑같은 설명을 반복하고 있다면, 프롬프트 문제가 아닙니다](https://velog.io/@hoohoo0889/%EB%A7%A4-%EC%84%B8%EC%85%98-%EB%98%91%EA%B0%99%EC%9D%80-%EC%84%A4%EB%AA%85%EC%9D%84-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%A9%B4-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4)
 
 ---
 

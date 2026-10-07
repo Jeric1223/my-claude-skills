@@ -94,6 +94,15 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "qa-check",
+      "source": "./qa-check",
+      "description": "합동 QA에서 외부 사용자가 헷갈리는 지점(용어·빈 값·설명 부재·기본값 불일치 등)을 실제 화면을 열어 점검하고, 댓글을 재현 여부로 판정해 QA 시트 행 형식으로 정리",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }

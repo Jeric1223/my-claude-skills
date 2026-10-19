@@ -38,6 +38,7 @@
 | **[mentor-mode-teaching](./mentor-mode-teaching)** | `mentor-mode-teaching@jeric-skills` | 사수 역할로 새 기술의 개념을 먼저 설명하고 예측 질문을 던진 뒤, 맞은 부분·교정·용어표·면접용 한 문장 형식으로 피드백하며 프로젝트를 같이 진행합니다 |
 | **[save-learning-log](./save-learning-log)** | `save-learning-log@jeric-skills` | 학습 세션을 끝낼 때 다음에 할 일·숙제·미답변 질문·날짜별 Q&A 요약을 프로젝트 `MEMORY.md`에 남기고, 다음 세션이 그 지점부터 이어가도록 `CLAUDE.md`에 연결합니다 |
 | **[qa-check](./qa-check)** | `qa-check@jeric-skills` | 합동 QA에서 외부 사용자가 헷갈리는 지점(용어·빈 값·설명 부재·기본값 불일치 등)을 실제 화면을 열어 점검하고, 댓글을 재현됨·이미 반영된 듯·확인 불가로 판정해 QA 시트 행 형식으로 정리합니다 |
+| **[particle-stage](./particle-stage)** | `particle-stage@jeric-skills` | knot.kr처럼 스크롤 한 번에 장면이 넘어가고 수천 개의 점이 장면마다 글자·말풍선·파형·그래프로 모이는 인터랙티브 랜딩을, 라이브러리 없이 Canvas 2D + 스프링 물리 엔진 템플릿으로 설계·구현합니다 |
 
 ## 설계 원칙
 

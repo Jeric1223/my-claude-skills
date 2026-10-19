@@ -103,6 +103,15 @@
       "author": {
         "name": "Jeric1223"
       }
+    },
+    {
+      "name": "particle-stage",
+      "source": "./particle-stage",
+      "description": "스텝 스크롤 + Canvas 2D 파티클 모핑(글자·도형·파형·그래프) 인터랙티브 랜딩을 라이브러리 없이 스프링 물리 엔진 템플릿으로 설계·구현",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeric1223"
+      }
     }
   ]
 }
